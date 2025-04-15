@@ -29,7 +29,7 @@ def answer_health_question(question):
         if content:
             combined_text += content[:3000]  # Avoid too long input for summarizer
     if not combined_text:
-        return "Sorry Nuna, I couldn’t find enough info. Try rephrasing?"
+        return "Sorry, I couldn’t find enough info. Try rephrasing?"
     print("Summarizing content...")
     summary = summarizer(combined_text, max_length=200, min_length=60, do_sample=False)[0]['summary_text']
     return summary
